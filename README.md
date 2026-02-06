@@ -1,6 +1,6 @@
 # Luxembourgish Acoustic Model for Montreal Forced Aligner (MFA)
 
-This repository provides a **ready-to-use acoustic model** and **pronunciation dictionary** for forced alignment of **Luxembourgish** speech using the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) (MFA). It is intended for linguists, computational linguists, and researchers working with Luxembourgish speech data.
+This repository provides a **ready-to-use acoustic model** and **pronunciation dictionary** for forced alignment of **Luxembourgish** speech using the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) (MFA). The model was trained with Luxembourgish-specific **phonological rules** (see `config/lb_rules.yaml`) so that dictionary pronunciations are mapped to a consistent phone set (e.g. degemination, /ʀ/ allophony, schwa and cluster adjustments). It is intended for linguists, computational linguists, and researchers working with Luxembourgish speech data.
 
 The model and dictionary correspond to **training run 6** from our internal training pipeline and have been used successfully for word- and phone-level alignment of Luxembourgish corpora.
 
@@ -68,15 +68,15 @@ mfa-luxembourgish-published/
 │   ├── corpus/                 # Minimal sample
 │   │   ├── kraider.wav, kraider.txt
 │   │   └── RTL_1.wav, RTL_1.txt
-│   └── output/                 # Example TextGrids (segment tier) 
+│   └── output/                 # Example TextGrids (segment tier) dd
 │       └── kraider.TextGrid, RTL_1.TextGrid
 ├── phones.txt                  # List of phone symbols used in the dictionary
 └── graphemes.txt               # List of grapheme characters (orthography)
 ```
 
-- **`models/lb_acoustic_model.zip`** — Use this as the acoustic model in `mfa align` and `mfa segment`.
-- **`dictionary/luxembourgish_mfa_run6.dict`** — Dictionary with pronunciation probabilities (trained on a Luxembourgish corpus). Use it as the dictionary in `mfa align`. Format: word, optional probability columns, then space-separated IPA phones.
-- **`config/`** — YAML files used when *training* the acoustic model; you only need these if you retrain or adapt the model.
+- **`models/lb_acoustic_model.zip`** — Luxembourgish acoustic model (training run 6). Use it in `mfa align` and `mfa segment`. It was trained with **phonological rules** (see `config/lb_rules.yaml`) that map dictionary pronunciations to the actual phone sequence used in the model: degemination (e.g. double consonants → single), allophonic variation of /ʀ/ (e.g. [ʀ], [χ], [ʁ], [ɐ] by context), schwa deletion/insertion in specific contexts, simplification of clusters (e.g. *s ʃ* → *ʃ*), and integration of nasal vowels in loanwords (e.g. *ɑ̃ː* → *æ* before *n/m*). The rules are applied during training and alignment so that dictionary and acoustic model use a consistent phone inventory.
+- **`dictionary/luxembourgish_mfa_run6.dict`** — Pronunciation dictionary with probabilities (trained on a Luxembourgish corpus). Use it as the dictionary in `mfa align`. Many words include **common pronunciation variants** (e.g. *déi* → [diː], *wou* → [wuː], *gehalen* → [gəhaːl], *géif* → [gif]); the trained probabilities help the aligner choose among them. Format: word, optional probability columns, then space-separated IPA phones.
+- **`config/`** — YAML files used when *training* the acoustic model: **`lb_rules.yaml`** defines the phonological rules (see above); **`lb_phone_groups.yaml`** defines phone groups for training. You only need these if you retrain or adapt the model.
 - **`g2p_models/`** — Grapheme-to-phoneme models for generating pronunciations for out-of-vocabulary (OOV) words: **model-8** (Sequitur) and **lb_g2p.zip** (MFA). See [PIPELINE.md](PIPELINE.md) and the section *G2P models for OOV conversion* below.
 - **`sample/`** — Two recordings from the test corpus, each with `.wav` + `.txt`, plus example TextGrids (segment tier) produced by MFA.
 - **`phones.txt`** and **`graphemes.txt`** — Reference lists of the phone set and grapheme set used in the dictionary.
