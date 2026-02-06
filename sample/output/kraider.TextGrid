@@ -1,0 +1,66 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 27.487142857142857 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Schnëssen" 
+        xmin = 0 
+        xmax = 27.487142857142857 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.26350000500679016 
+            text = "" 
+        intervals [2]:
+            xmin = 0.26350000500679016 
+            xmax = 4.906499862670898 
+            text = "se si gesond gesi schéin aus schmaache gutt a schéin nimm hunn se och nach" 
+        intervals [3]:
+            xmin = 4.906499862670898 
+            xmax = 5.173500061035156 
+            text = "" 
+        intervals [4]:
+            xmin = 5.173500061035156 
+            xmax = 9.456500053405762 
+            text = "ech schwätze vun den uebst a geméisszorten vun de kraider de gewierzer an den nëss" 
+        intervals [5]:
+            xmin = 9.456500053405762 
+            xmax = 9.803500175476074 
+            text = "" 
+        intervals [6]:
+            xmin = 9.803500175476074 
+            xmax = 15.866499900817871 
+            text = "an dësem buch huet den zenter fir d' lëtzebuerger sprooch ronn dräihonnert nimm fir déi geleefegst produiten vun der natur gesammelt" 
+        intervals [7]:
+            xmin = 15.866499900817871 
+            xmax = 16.00349998474121 
+            text = "" 
+        intervals [8]:
+            xmin = 16.00349998474121 
+            xmax = 20.556499481201172 
+            text = "dat ass natierlech just eng selektioun mee déi meescht zorten déi kann een iessen" 
+        intervals [9]:
+            xmin = 20.556499481201172 
+            xmax = 20.633499145507812 
+            text = "" 
+        intervals [10]:
+            xmin = 20.633499145507812 
+            xmax = 23.046499252319336 
+            text = "an déi déi et hei am gaart oder am buttek gëtt" 
+        intervals [11]:
+            xmin = 23.046499252319336 
+            xmax = 23.053499221801758 
+            text = "" 
+        intervals [12]:
+            xmin = 23.053499221801758 
+            xmax = 27.4064998626709 
+            text = "fënnt een an dësem drëtte band vun der beléifter serie lëtzebuerger wuertschatz" 
+        intervals [13]:
+            xmin = 27.4064998626709 
+            xmax = 27.487142857142857 
+            text = "" 

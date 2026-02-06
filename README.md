@@ -61,12 +61,15 @@ mfa-luxembourgish-published/
 ├── config/                     # Optional MFA config used during training
 │   ├── lb_rules.yaml           # Pronunciation rules (e.g. degemination)
 │   └── lb_phone_groups.yaml   # Phone groups for training
+├── g2p_models/                 # G2P models for OOV pronunciation generation
+│   ├── model-8                 # Sequitur G2P (Luxembourgish)
+│   └── lb_g2p.zip              # MFA Luxembourgish G2P model
 ├── sample/
-│   ├── corpus/                 # Minimal sample: audio + transcripts
-│   │   ├── *.wav
-│   │   └── *.txt
-│   └── output/                 # Example TextGrids from MFA (segment tier)
-│       └── *.TextGrid
+│   ├── corpus/                 # Minimal sample: kraider + RTL_1 (wav + txt)
+│   │   ├── kraider.wav, kraider.txt
+│   │   └── RTL_1.wav, RTL_1.txt
+│   └── output/                 # Example TextGrids (segment tier) for kraider, RTL_1
+│       └── kraider.TextGrid, RTL_1.TextGrid
 ├── phones.txt                  # List of phone symbols used in the dictionary
 └── graphemes.txt               # List of grapheme characters (orthography)
 ```
@@ -74,7 +77,8 @@ mfa-luxembourgish-published/
 - **`models/lb_acoustic_model.zip`** — Use this as the acoustic model in `mfa align` and `mfa segment`.
 - **`dictionary/luxembourgish_mfa_run6.dict`** — Dictionary with pronunciation probabilities (trained on a Luxembourgish corpus). Use it as the dictionary in `mfa align`. Format: word, optional probability columns, then space-separated IPA phones.
 - **`config/`** — YAML files used when *training* the acoustic model; you only need these if you retrain or adapt the model.
-- **`sample/`** — A tiny corpus (wav + txt) and example TextGrids produced by MFA on a small test set (`mfa-test-small`).
+- **`g2p_models/`** — Grapheme-to-phoneme models for generating pronunciations for out-of-vocabulary (OOV) words: **model-8** (Sequitur) and **lb_g2p.zip** (MFA). See [PIPELINE.md](PIPELINE.md) and the section *G2P models for OOV conversion* below.
+- **`sample/`** — Two recordings from the test corpus: **kraider** and **RTL_1**, each with `.wav` + `.txt`, plus example TextGrids (segment tier) produced by MFA.
 - **`phones.txt`** and **`graphemes.txt`** — Reference lists of the phone set and grapheme set used in the dictionary.
 
 ---
@@ -99,6 +103,21 @@ my_corpus/
 
 Paths below assume you have cloned this repo and you run commands from the repo root. Replace `PATH_TO_THIS_REPO` with the actual path.
 
+### Minimal pipeline: segment, then align
+
+We recommend a **two-step workflow**: first **segment** the audio+text corpus (VAD and transcript-based segmentation), then **align** the segmented corpus. This way alignment respects segment boundaries and is usually more stable.
+
+1. **Segment** — From audio + transcript (`.wav` + `.txt`), MFA creates a **segmented corpus**: each recording gets a **TextGrid** with a **segment** tier (and the transcript text per segment). The segmented corpus is a folder with the same structure but **only `.wav` + `.TextGrid`** (no `.txt`).
+2. **Align** — Run `mfa align` on that **segmented** corpus (wav + segment TextGrid only). MFA then adds **word** and **phone** tiers to the TextGrids.
+
+So the minimal pipeline is:
+
+```
+your_corpus/ (wav + txt)  →  mfa segment  →  segmented_corpus/ (wav + segment TextGrid)
+                                                      ↓
+                                              mfa align  →  output/ (TextGrids with segments + words + phones)
+```
+
 ### 1. Install the model and dictionary into MFA (one-time)
 
 So that MFA can find the model and dictionary by name:
@@ -113,53 +132,78 @@ mfa model add acoustic lb_acoustic_lux PATH_TO_THIS_REPO/models/lb_acoustic_mode
 mfa dictionary add luxembourgish_run6 PATH_TO_THIS_REPO/dictionary/luxembourgish_mfa_run6.dict
 ```
 
-### 2. Run alignment
+### 2. Segment your corpus
+
+```bash
+mfa segment \
+  /path/to/your/corpus \
+  PATH_TO_THIS_REPO/dictionary/luxembourgish_mfa_run6.dict \
+  PATH_TO_THIS_REPO/models/lb_acoustic_model.zip \
+  /path/to/segmented_corpus \
+  --num_jobs 4 \
+  --clean --overwrite
+```
+
+Input: corpus with **`.wav`** and **`.txt`** per recording.  
+Output: **`/path/to/segmented_corpus`** with the same layout but **`.wav`** + **`.TextGrid`** (segment tier only; no `.txt`). Use this folder as the input to `mfa align`.
+
+### 3. Align the segmented corpus
 
 ```bash
 mfa align \
-  /path/to/your/corpus \
+  /path/to/segmented_corpus \
   PATH_TO_THIS_REPO/dictionary/luxembourgish_mfa_run6.dict \
   PATH_TO_THIS_REPO/models/lb_acoustic_model.zip \
   /path/to/output \
   --num_jobs 4
 ```
 
-If you installed the model and dictionary as above, you can use their names:
+Input: **segmented corpus** (wav + segment TextGrid only).  
+Output: **TextGrid** files with **segment**, **word**, and **phone** tiers.
+
+If you installed the model and dictionary by name, you can use:
 
 ```bash
 mfa align \
-  /path/to/your/corpus \
+  /path/to/segmented_corpus \
   luxembourgish_run6 \
   lb_acoustic_lux \
   /path/to/output \
   --num_jobs 4
 ```
 
-Output: in `/path/to/output` you get the same folder structure as the input, with **TextGrid** files (and optional `.lab`), containing word- and phone-level alignments.
+### 4. Try the sample corpus (kraider + RTL_1)
 
-### 3. Try the sample corpus
-
-From the repo root:
+From the repo root, run the full pipeline on the included sample:
 
 ```bash
 conda activate aligner
 
-mfa align \
+# Step 1: Segment
+mfa segment \
   sample/corpus \
+  dictionary/luxembourgish_mfa_run6.dict \
+  models/lb_acoustic_model.zip \
+  sample/segmented \
+  --num_jobs 2 --clean --overwrite
+
+# Step 2: Align (input = segmented corpus: wav + TextGrid only, no .txt)
+mfa align \
+  sample/segmented \
   dictionary/luxembourgish_mfa_run6.dict \
   models/lb_acoustic_model.zip \
   sample/my_output \
   --num_jobs 2
 ```
 
-Then open the generated `.TextGrid` files in [Praat](https://www.fon.hum.uva.nl/praat/) or any tool that reads TextGrids. The tiers contain segments/words and phones.
+Then open the generated `.TextGrid` files in [Praat](https://www.fon.hum.uva.nl/praat/). The tiers contain segments, words, and phones. The sample contains **kraider** and **RTL_1** (see *Sample files and TextGrids* below).
 
 ---
 
 ## Sample files and TextGrids
 
-- **`sample/corpus/`** — A few **.wav** and **.txt** files from the internal test corpus `mfa-test-small`. Each `.txt` contains the orthographic transcript for the corresponding `.wav`. You can use this folder to test `mfa align` without preparing your own data.
-- **`sample/output/`** — Example **TextGrid** files produced by MFA on the same small corpus. They contain at least a **segment** tier (and, when running full alignment, **word** and **phone** tiers). Use them as a reference for the output format and for checking alignment quality.
+- **`sample/corpus/`** — Two recordings from the test corpus **mfa-test-small**: **kraider** and **RTL_1**. For each you have a **.wav** and a **.txt** with the orthographic transcript. Use this folder to run the minimal pipeline (segment → align) without preparing your own data.
+- **`sample/output/`** — Example **TextGrid** files for **kraider** and **RTL_1** produced by MFA (segment tier). After running `mfa align` on the segmented corpus you get full TextGrids with **segment**, **word**, and **phone** tiers.
 
 TextGrid format: [Praat TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html). MFA writes one tier per level (e.g. segments, words, phones) with intervals and labels.
 
@@ -174,24 +218,29 @@ Both lists are derived from `dictionary/luxembourgish_mfa_run6.dict`.
 
 ---
 
-## Going further: G2P, OOV words, and dictionary expansion
+## G2P models for OOV conversion
+
+This repo includes two **grapheme-to-phoneme (G2P)** models in **`g2p_models/`** so you can generate IPA pronunciations for **out-of-vocabulary (OOV)** words and add them to the dictionary:
+
+| File | Description |
+|------|--------------|
+| **`model-8`** | **Sequitur G2P** model (Luxembourgish), trained on dictionary data. Use with the [sequitur-g2p](https://github.com/sequitur-g2p/sequitur-g2p) tool, e.g. `g2p.py --model g2p_models/model-8 --apply oov_words.txt`. |
+| **`lb_g2p.zip`** | **MFA Luxembourgish G2P** model. Install with `mfa g2p add lb_g2p g2p_models/lb_g2p.zip`, then run `mfa g2p oov_words.txt lb_g2p oov_pronunciations.txt`. |
+
+Typical integration: (1) run `mfa find_oovs` on your corpus to get a list of OOV words; (2) convert that list to one word per line; (3) run either Sequitur or MFA G2P to get word → IPA; (4) merge the new entries into your dictionary; (5) optionally run `mfa train_dictionary` and then segment + align. Full details, command examples, and workflow options are in **[PIPELINE.md](PIPELINE.md)**.
+
+---
+
+## Going further: OOV words and dictionary expansion
 
 In real corpora, **out-of-vocabulary (OOV)** words often appear. The supplied dictionary is large but will not contain every possible word. A typical workflow is:
 
 1. Run **OOV detection** (e.g. `mfa find_oovs`) on your corpus.
-2. Add pronunciations for OOVs, e.g. by **grapheme-to-phoneme (G2P)** prediction, manual transcription, or a mix.
-3. **Merge** these new entries into the dictionary (and optionally **train dictionary** with `mfa train_dictionary` to get pronunciation probabilities).
-4. Run **alignment** (and optionally **segmentation** with `mfa segment` first).
+2. Add pronunciations for OOVs using the **G2P models** above (or manual transcription), then **merge** into the dictionary.
+3. Optionally **train dictionary** with `mfa train_dictionary` to get pronunciation probabilities.
+4. Run the **minimal pipeline** (segment → align) with the expanded dictionary.
 
-We use a more complex pipeline that includes:
-
-- Number-to-words conversion (e.g. *12* → *zwielef*),
-- G2P (Sequitur or MFA’s Luxembourgish G2P) for OOV words,
-- Manual review and correction of OOV pronunciations,
-- Dictionary training for probabilities,
-- Optional segmentation before alignment.
-
-A high-level description of this pipeline and the main steps is in **[PIPELINE.md](PIPELINE.md)**. It is aimed at researchers who want to adapt the workflow or integrate G2P and OOV handling into their own scripts.
+A more complex pipeline can also include number-to-words conversion, manual review of G2P output, and merging segment + align TextGrids. See **[PIPELINE.md](PIPELINE.md)** for the full workflow and how to integrate the G2P models.
 
 ---
 

@@ -1,0 +1,62 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 35.216875 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Schnëssen" 
+        xmin = 0 
+        xmax = 35.216875 
+        intervals: size = 12 
+        intervals [1]:
+            xmin = 0 
+            xmax = 4.946500301361084 
+            text = "jo am géigesaz zu den hamstere maachen ech net an d' box wéinst der coronakris mee et gëtt mer schlecht" 
+        intervals [2]:
+            xmin = 4.946500301361084 
+            xmax = 5.113500118255615 
+            text = "" 
+        intervals [3]:
+            xmin = 5.113500118255615 
+            xmax = 11.616499900817871 
+            text = "well wéinst dem hamstere muss ech elo souguer baangen a virun allem déi leit déi am fleegesecteur an an anere wichtege beruffer schaffen" 
+        intervals [4]:
+            xmin = 11.616499900817871 
+            xmax = 11.693499565124512 
+            text = "" 
+        intervals [5]:
+            xmin = 11.693499565124512 
+            xmax = 18.10650062561035 
+            text = "lo musse mer baangen ob mer déi nächst deeg owes no der aarbecht nach eppes z iesse fannen wa mer bis de frigo eidel hunn" 
+        intervals [6]:
+            xmin = 18.10650062561035 
+            xmax = 18.32349967956543 
+            text = "" 
+        intervals [7]:
+            xmin = 18.32349967956543 
+            xmax = 26.566499710083008 
+            text = "et gi leit déi net a panik verfall sinn a sech un d' reegele gehal hunn ech hunn zum beispill déi lescht véier wochen net méi akaf ausser bensinn well den tank eidel war" 
+        intervals [8]:
+            xmin = 26.566499710083008 
+            xmax = 26.673500061035156 
+            text = "" 
+        intervals [9]:
+            xmin = 26.673500061035156 
+            xmax = 31.87649917602539 
+            text = "wann d' supermarchéë elo déi nächst deeg rationaliséiere mussen well hir rayionen duerch hamstere geraumt goufen" 
+        intervals [10]:
+            xmin = 31.87649917602539 
+            xmax = 31.93349838256836 
+            text = "" 
+        intervals [11]:
+            xmin = 31.93349838256836 
+            xmax = 35.21687316894531 
+            text = "da ginn déi leit déi net panikéiert hunn bestrooft" 
+        intervals [12]:
+            xmin = 35.21687316894531 
+            xmax = 35.216875 
+            text = "" 

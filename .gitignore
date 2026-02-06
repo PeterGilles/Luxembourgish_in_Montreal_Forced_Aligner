@@ -33,6 +33,10 @@ env/
 *.log
 .cache/
 
+# Generated sample outputs (README asks users to run segment + align here)
+sample/segmented/
+sample/my_output/
+
 # Optional: ignore large sample WAVs if you want to keep repo small
 # Uncomment if you use Git LFS or host audio elsewhere
 # sample/corpus/*.wav
