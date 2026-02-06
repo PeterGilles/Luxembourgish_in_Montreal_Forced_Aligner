@@ -65,10 +65,10 @@ mfa-luxembourgish-published/
 │   ├── model-8                 # Sequitur G2P (Luxembourgish)
 │   └── lb_g2p.zip              # MFA Luxembourgish G2P model
 ├── sample/
-│   ├── corpus/                 # Minimal sample: kraider + RTL_1 (wav + txt)
+│   ├── corpus/                 # Minimal sample
 │   │   ├── kraider.wav, kraider.txt
 │   │   └── RTL_1.wav, RTL_1.txt
-│   └── output/                 # Example TextGrids (segment tier) for kraider, RTL_1
+│   └── output/                 # Example TextGrids (segment tier) 
 │       └── kraider.TextGrid, RTL_1.TextGrid
 ├── phones.txt                  # List of phone symbols used in the dictionary
 └── graphemes.txt               # List of grapheme characters (orthography)
@@ -78,7 +78,7 @@ mfa-luxembourgish-published/
 - **`dictionary/luxembourgish_mfa_run6.dict`** — Dictionary with pronunciation probabilities (trained on a Luxembourgish corpus). Use it as the dictionary in `mfa align`. Format: word, optional probability columns, then space-separated IPA phones.
 - **`config/`** — YAML files used when *training* the acoustic model; you only need these if you retrain or adapt the model.
 - **`g2p_models/`** — Grapheme-to-phoneme models for generating pronunciations for out-of-vocabulary (OOV) words: **model-8** (Sequitur) and **lb_g2p.zip** (MFA). See [PIPELINE.md](PIPELINE.md) and the section *G2P models for OOV conversion* below.
-- **`sample/`** — Two recordings from the test corpus: **kraider** and **RTL_1**, each with `.wav` + `.txt`, plus example TextGrids (segment tier) produced by MFA.
+- **`sample/`** — Two recordings from the test corpus, each with `.wav` + `.txt`, plus example TextGrids (segment tier) produced by MFA.
 - **`phones.txt`** and **`graphemes.txt`** — Reference lists of the phone set and grapheme set used in the dictionary.
 
 ---
@@ -174,7 +174,7 @@ mfa align \
   --num_jobs 4
 ```
 
-### 4. Try the sample corpus (kraider + RTL_1)
+### 4. Try the sample corpus
 
 From the repo root, run the full pipeline on the included sample:
 
@@ -198,14 +198,14 @@ mfa align \
   --num_jobs 2
 ```
 
-Then open the generated `.TextGrid` files in [Praat](https://www.fon.hum.uva.nl/praat/). The tiers contain segments, words, and phones. The sample contains **kraider** and **RTL_1** (see *Sample files and TextGrids* below).
+Then open the generated `.TextGrid` files in [Praat](https://www.fon.hum.uva.nl/praat/). The tiers contain segments, words, and phones. 
 
 ---
 
 ## Sample files and TextGrids
 
-- **`sample/corpus/`** — Two recordings from the test corpus **mfa-test-small**: **kraider** and **RTL_1**. For each you have a **.wav** and a **.txt** with the orthographic transcript. Use this folder to run the minimal pipeline (segment → align) without preparing your own data.
-- **`sample/output/`** — Example **TextGrid** files for **kraider** and **RTL_1** produced by MFA (segment tier). After running `mfa align` on the segmented corpus you get full TextGrids with **segment**, **word**, and **phone** tiers.
+- **`sample/corpus/`** — Two recordings from the test corpus. For each you have a **.wav** and a **.txt** with the orthographic transcript. Use this folder to run the minimal pipeline (segment → align) without preparing your own data.
+- **`sample/output/`** — Example **TextGrid** files produced by MFA (segment tier). After running `mfa align` on the segmented corpus you get full TextGrids with **segment**, **word**, and **phone** tiers.
 
 Example of an aligned TextGrid (segment, word, and phone tiers):
 

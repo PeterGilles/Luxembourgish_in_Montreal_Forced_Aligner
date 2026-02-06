@@ -94,6 +94,8 @@ See the [MFA documentation on training dictionaries](https://montreal-forced-ali
 
 ### Segmentation (optional)
 
+**Requirement:** `mfa segment` uses [SpeechBrain](https://speechbrain.github.io/) for VAD and segmentation. Install it if needed (e.g. `pip install speechbrain`). See the [MFA segmentation documentation](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/corpus_creation/create_segments.html) for details.
+
 ```bash
 mfa segment CORPUS_DIR DICTIONARY_PATH ACOUSTIC_MODEL OUTPUT_DIR [--num_jobs N] [--single_speaker] [--clean] [--overwrite]
 ```
