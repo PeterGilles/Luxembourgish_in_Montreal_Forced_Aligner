@@ -134,6 +134,8 @@ mfa dictionary add luxembourgish_run6 PATH_TO_THIS_REPO/dictionary/luxembourgish
 
 ### 2. Segment your corpus
 
+**Note:** `mfa segment` requires [SpeechBrain](https://speechbrain.github.io/) (for VAD/segmentation). Install it if needed, e.g. `pip install speechbrain` or via the [MFA segmentation documentation](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/corpus_creation/create_segments.html).
+
 ```bash
 mfa segment \
   /path/to/your/corpus \
@@ -205,6 +207,10 @@ Then open the generated `.TextGrid` files in [Praat](https://www.fon.hum.uva.nl/
 - **`sample/corpus/`** — Two recordings from the test corpus **mfa-test-small**: **kraider** and **RTL_1**. For each you have a **.wav** and a **.txt** with the orthographic transcript. Use this folder to run the minimal pipeline (segment → align) without preparing your own data.
 - **`sample/output/`** — Example **TextGrid** files for **kraider** and **RTL_1** produced by MFA (segment tier). After running `mfa align` on the segmented corpus you get full TextGrids with **segment**, **word**, and **phone** tiers.
 
+Example of an aligned TextGrid (segment, word, and phone tiers):
+
+![Aligned TextGrid](sample/output/Aligned_TextGrid.png)
+
 TextGrid format: [Praat TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html). MFA writes one tier per level (e.g. segments, words, phones) with intervals and labels.
 
 ---
@@ -231,32 +237,7 @@ Typical integration: (1) run `mfa find_oovs` on your corpus to get a list of OOV
 
 ---
 
-## Going further: OOV words and dictionary expansion
-
-In real corpora, **out-of-vocabulary (OOV)** words often appear. The supplied dictionary is large but will not contain every possible word. A typical workflow is:
-
-1. Run **OOV detection** (e.g. `mfa find_oovs`) on your corpus.
-2. Add pronunciations for OOVs using the **G2P models** above (or manual transcription), then **merge** into the dictionary.
-3. Optionally **train dictionary** with `mfa train_dictionary` to get pronunciation probabilities.
-4. Run the **minimal pipeline** (segment → align) with the expanded dictionary.
-
-A more complex pipeline can also include number-to-words conversion, manual review of G2P output, and merging segment + align TextGrids. See **[PIPELINE.md](PIPELINE.md)** for the full workflow and how to integrate the G2P models.
-
----
-
-## Citation and licence
-
-If you use this model or dictionary in academic work, please cite the Montreal Forced Aligner and, if applicable, this repository.
-
-- **Montreal Forced Aligner:**  
-  McAuliffe et al., *Montreal Forced Aligner: Trainable Text-Speech Alignment Using Kaldi*, Interspeech 2017.
-
-For licence and reuse of this repository’s contents, see the licence file in the repository (if present); otherwise, please contact the repository maintainers.
-
----
-
 ## Links
 
 - **MFA documentation:** [https://montreal-forced-aligner.readthedocs.io/en/latest/](https://montreal-forced-aligner.readthedocs.io/en/latest/)
-- **MFA pretrained models:** [https://montreal-forced-aligner.readthedocs.io/en/latest/pretrained_models.html](https://montreal-forced-aligner.readthedocs.io/en/latest/pretrained_models.html)
 - **Praat:** [https://www.fon.hum.uva.nl/praat/](https://www.fon.hum.uva.nl/praat/)
