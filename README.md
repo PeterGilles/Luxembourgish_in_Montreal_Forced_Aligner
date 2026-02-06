@@ -230,7 +230,7 @@ This repo includes two **grapheme-to-phoneme (G2P)** models in **`g2p_models/`**
 
 | File | Description |
 |------|--------------|
-| **`model-8`** | **Sequitur G2P** model (Luxembourgish), trained on dictionary data. Use with the [sequitur-g2p](https://github.com/sequitur-g2p/sequitur-g2p) tool, e.g. `g2p.py --model g2p_models/model-8 --apply oov_words.txt`. |
+| **`model-8`** | **Sequitur G2P** model (Luxembourgish), trained on dictionary data. Use with the [Luxembourgish sequitur-g2p](https://github.com/PeterGilles/sequitur-g2p) tool, e.g. `g2p.py --model g2p_models/model-8 --apply oov_words.txt`. |
 | **`lb_g2p.zip`** | **MFA Luxembourgish G2P** model. Install with `mfa g2p add lb_g2p g2p_models/lb_g2p.zip`, then run `mfa g2p oov_words.txt lb_g2p oov_pronunciations.txt`. |
 
 Typical integration: (1) run `mfa find_oovs` on your corpus to get a list of OOV words; (2) convert that list to one word per line; (3) run either Sequitur or MFA G2P to get word → IPA; (4) merge the new entries into your dictionary; (5) optionally run `mfa train_dictionary` and then segment + align. Full details, command examples, and workflow options are in **[PIPELINE.md](PIPELINE.md)**.

@@ -1,6 +1,6 @@
 # Advanced alignment pipeline: G2P, OOV handling, and dictionary expansion
 
-This document describes a **more complex workflow** for aligning Luxembourgish speech when your corpus contains **out-of-vocabulary (OOV) words**—i.e. words that are not in the pronunciation dictionary. It is aimed at linguists and computational linguists who want to understand or adapt such a pipeline.
+This document describes a **more complex workflow** for aligning Luxembourgish speech when your corpus contains **out-of-vocabulary (OOV) words**—i.e. words that are not in the pronunciation dictionary. 
 
 ---
 
@@ -56,10 +56,10 @@ A typical high-level workflow looks like this:
 Steps in words:
 
 1. **OOV detection** — Run `mfa find_oovs` on your corpus with the current dictionary. MFA reports which words in the transcripts are not in the dictionary (and often how often they occur).
-2. **Number conversion** — If your transcripts contain digits (e.g. *12*, *2024*), convert them to words (e.g. *zwielef*, *zweedausendvéieranzwanzeg*) using a number-to-words tool (e.g. for Luxembourgish). Then treat those word forms as normal vocabulary (add them to the dictionary if they are still OOV).
+2. **Number conversion** — If your transcripts contain digits (e.g. *12*, *2024*), convert them to Luxembourgish words (e.g. *zwielef*, *zweedausendvéieranzwanzeg*) using the [Luxembourgish num2words](https://github.com/PeterGilles/num2words) package. Then treat those word forms as normal vocabulary (add them to the dictionary if they are still OOV).
 3. **G2P for OOVs** — For each OOV word, generate a candidate pronunciation (IPA) using one of the **G2P models** included in this repo: **model-8** (Sequitur) or **lb_g2p.zip** (MFA). See the section *G2P models: integrating model-8 and lb_g2p.zip* below.
 4. **Manual review** — Inspect the OOV list with suggested IPA. Correct mispronunciations, dialectal variants, and proper nouns. Save the result as word–IPA pairs (or word–replacement–IPA if you normalize spelling).
-5. **Dictionary expansion** — Merge the base dictionary with the new OOV entries (word + IPA). Optionally run **`mfa train_dictionary`** on a corpus to estimate **pronunciation probabilities** for multiple variants (e.g. *a* → [aː] vs [ɑ]).
+5. **Dictionary expansion** — Merge the base dictionary with the new OOV entries (word + IPA). Optionally run **`mfa train_dictionary`** on a corpus to estimate **pronunciation probabilities** for multiple variants.
 6. **Segmentation (recommended)** — Run **`mfa segment`** on your corpus (wav + txt). This produces a **segmented corpus** (wav + segment TextGrid only). Alignment then uses this folder so that MFA respects segment boundaries.
 7. **Alignment** — Run **`mfa align`** on the **segmented** corpus with the expanded (and optionally trained) dictionary and the Luxembourgish acoustic model. Output: TextGrids with segment, word, and phone tiers.
 8. **Merge (optional)** — If you need a single TextGrid per file that combines segment boundaries with word/phone tiers from a separate align run, use a small script (e.g. with `praatio`) to merge them.
@@ -79,6 +79,42 @@ mfa find_oovs CORPUS_DIR DICTIONARY_PATH OUTPUT_DIR [--num_jobs N] [--clean] [--
 - **OUTPUT_DIR** — Where MFA writes OOV lists (e.g. `oov_counts_*.txt` with word and count).
 
 See the [MFA documentation on finding OOVs](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/workflows/finding_oovs.html).
+
+### Number conversion (Luxembourgish num2words)
+
+If your transcripts contain digits, dates, times, or currency (e.g. *12*, *2024*, *10:34*, *1,50 EUR*), convert them to Luxembourgish words **before** OOV detection or alignment. The **[num2words](https://github.com/PeterGilles/num2words)** package provides Luxembourgish support (language code `lb`), including a text normalizer that converts numbers and related expressions in place.
+
+**Install** (this Luxembourgish-enhanced version is not on PyPI; install from GitHub):
+
+```bash
+pip install git+https://github.com/PeterGilles/num2words.git
+```
+
+Or clone and install in development mode:
+
+```bash
+git clone https://github.com/PeterGilles/num2words.git
+cd num2words
+pip install -e .
+```
+
+**Usage for corpus text:** The repo includes `luxembourgish_normalizer.py`, which converts numbers, dates, times, percentages, currency, etc. in a text file to Luxembourgish word forms:
+
+```bash
+python luxembourgish_normalizer.py input_file.txt
+# or pipe text
+echo "Den 12. Abrëll 2024" | python luxembourgish_normalizer.py
+```
+
+**In Python** (e.g. in a custom script):
+
+```python
+from num2words import num2words
+num2words(42, lang='lb')           # 'zweeavéierzeg'
+num2words(2024, lang='lb', to='year')  # 'zweedausendvéieranzwanzeg'
+```
+
+Run number conversion on your corpus `.txt` files (with backups) before running `mfa find_oovs` or `mfa segment`, so that digit forms are replaced by words that can be looked up in the dictionary.
 
 ### Dictionary training (pronunciation probabilities)
 
@@ -123,19 +159,27 @@ This repository includes two G2P models in **`g2p_models/`** so you can generate
 
 - **File:** `g2p_models/model-8`
 - **Description:** A Sequitur G2P model trained on Luxembourgish dictionary data (grapheme → IPA). It outputs one pronunciation per word (space-separated phones).
-- **Dependency:** You need [sequitur-g2p](https://github.com/sequitur-g2p/sequitur-g2p) installed (e.g. `pip install sequitur-g2p` or clone the repo and use its `g2p.py`).
+- **Dependency:** Use the **Luxembourgish-adapted** [sequitur-g2p](https://github.com/PeterGilles/sequitur-g2p) repository, which includes the pre-trained `model-8` and supports Luxembourgish characters and conventions. Clone it and use its `g2p.py`:
+
+   ```bash
+   git clone https://github.com/PeterGilles/sequitur-g2p.git
+   cd sequitur-g2p
+   pip install -e .
+   ```
+
+   Alternatively, use the `model-8` from this repo’s `g2p_models/` with that installation (see below).
 
 **How to use it to convert OOVs:**
 
 1. Extract your OOV words into a text file, **one word per line** (e.g. `oov_words.txt`).
-2. Run Sequitur’s `g2p.py` with this repo’s model:
+2. Run Sequitur’s `g2p.py` with the Luxembourgish model (either from the [PeterGilles/sequitur-g2p](https://github.com/PeterGilles/sequitur-g2p) clone or this repo’s `g2p_models/model-8`):
 
    ```bash
-   # From repo root; PATH_TO_REPO = path to this repo
+   # PATH_TO_REPO = path to this (MFA Luxembourgish) repo
    g2p.py --model PATH_TO_REPO/g2p_models/model-8 --apply oov_words.txt > oov_pronunciations.txt
    ```
 
-   If `g2p.py` is not on your PATH, use the full path to the script inside a sequitur-g2p clone:
+   If `g2p.py` is not on your PATH, use the full path to the script inside the sequitur-g2p clone:
 
    ```bash
    python /path/to/sequitur-g2p/g2p.py --model PATH_TO_REPO/g2p_models/model-8 --apply oov_words.txt > oov_pronunciations.txt
@@ -172,21 +216,10 @@ This repository includes two G2P models in **`g2p_models/`** so you can generate
 
 ### Choosing between the two
 
-- **Sequitur (model-8):** No MFA dependency for the G2P step; works with any environment where sequitur-g2p is installed. Useful in batch scripts that only need word → IPA.
+- **Sequitur (model-8):** No MFA dependency for the G2P step; use the [Luxembourgish sequitur-g2p](https://github.com/PeterGilles/sequitur-g2p) fork for full Luxembourgish support. Useful in batch scripts that only need word → IPA.
 - **MFA (lb_g2p.zip):** Fits naturally if you already use MFA for alignment and dictionary training; same toolchain and phone set as the rest of the pipeline.
 
 You can also run both on the same OOV list and compare or merge pronunciations (e.g. prefer one model for certain word types or use MFA output as fallback when Sequitur fails).
-
----
-
-## G2P and OOV list format
-
-- **G2P** takes a word (graphemes) and returns one or more pronunciation(s) in IPA (phone sequence). Training a G2P model requires a pronunciation dictionary (word–IPA pairs); Sequitur and MFA’s G2P trainer are common options.
-- In our pipeline, the **OOV list** is often stored as:  
-  `word TAB replacement TAB IPA TAB frequency`  
-  so that you can correct spelling (replacement) and IPA in one place. The “replacement” is the form that gets added to the dictionary; “word” is the original form in the corpus (for reference).
-
-After editing, you merge only the **replacement + IPA** (or word + IPA if no replacement) into the main dictionary.
 
 ---
 
@@ -206,3 +239,5 @@ After editing, you merge only the **replacement + IPA** (or word + IPA if no rep
 - [MFA — Finding OOVs](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/workflows/finding_oovs.html)
 - [MFA — Training dictionary](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/workflows/training_dictionary.html)
 - [MFA — Creating segments](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/corpus_creation/create_segments.html)
+- [Luxembourgish num2words](https://github.com/PeterGilles/num2words) — Number, date, time, and currency conversion to Luxembourgish.
+- [Luxembourgish Sequitur G2P](https://github.com/PeterGilles/sequitur-g2p) — Grapheme-to-phoneme conversion for Luxembourgish.
