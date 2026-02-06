@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor and IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+env/
+
+# Conda
+*.conda
+
+# Temporary and local
+*.bak
+*.tmp
+*.temp
+*.log
+.cache/
+
+# Optional: ignore large sample WAVs if you want to keep repo small
+# Uncomment if you use Git LFS or host audio elsewhere
+# sample/corpus/*.wav

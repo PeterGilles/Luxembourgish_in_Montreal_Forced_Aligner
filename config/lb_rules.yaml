@@ -1,0 +1,182 @@
+rules:
+# degemination (explicit per segment)
+  - following_context: 'p'
+    preceding_context: ''
+    replacement: ''
+    segment: 'p'
+
+  - following_context: 't'
+    preceding_context: ''
+    replacement: ''
+    segment: 't'
+
+  - following_context: 'k'
+    preceding_context: ''
+    replacement: ''
+    segment: 'k'
+
+  - following_context: 'b'
+    preceding_context: ''
+    replacement: ''
+    segment: 'b'
+
+  - following_context: 'd'
+    preceding_context: ''
+    replacement: ''
+    segment: 'd'
+
+  - following_context: 'ɡ'
+    preceding_context: ''
+    replacement: ''
+    segment: 'ɡ'
+
+  - following_context: 'm'
+    preceding_context: ''
+    replacement: ''
+    segment: 'm'
+
+  - following_context: 'n'
+    preceding_context: ''
+    replacement: ''
+    segment: 'n'
+
+  - following_context: 'f'
+    preceding_context: ''
+    replacement: ''
+    segment: 'f'
+
+  - following_context: 's'
+    preceding_context: ''
+    replacement: ''
+    segment: 's'
+
+  - following_context: 'ʃ'
+    preceding_context: ''
+    replacement: ''
+    segment: 'ʃ'
+
+  - following_context: 'ʀ'
+    preceding_context: ''
+    replacement: ''
+    segment: 'ʀ'
+
+  - following_context: 'l'
+    preceding_context: ''
+    segment: 'l'
+    replacement: ''
+
+  - following_context: ''  # tsjəʊn -> jsəʊn
+    preceding_context: ''
+    replacement: 's j əʊ n'
+    segment: 'ts j əʊ n'
+    
+  - following_context: ''  # tsjon -> sjon
+    preceding_context: ''
+    replacement: 's j o n'
+    segment: 'ts j o n'
+        
+  - following_context: ''  # éieren -> éiren
+    preceding_context: ''
+    replacement: 'ɜɪ ʀ ə n'
+    segment: 'ɜɪ ə ʀ ə n'
+
+  - following_context: ''  # s ʃ > ʃ
+    preceding_context: ''
+    replacement: 'ʃ'
+    segment: 's ʃ'
+    
+#   - following_context: ''  # əʑ -> iɕ
+#     preceding_context: ''
+#     replacement: 'i ɕ'
+#     segment: 'ə ɕ'
+#     
+#   - following_context: ''  # əʑ -> eɕ
+#     preceding_context: ''
+#     replacement: 'e ɕ'
+#     segment: 'ə ɕ'
+    
+#   - following_context: ''  # əʑə -> əɕə
+#     preceding_context: ''
+#     replacement: 'ə ɕ ə'
+#     segment: 'ə ʑ ə'
+# 
+#   - following_context: ''  # əʑɐ -> əɕɐ
+#     preceding_context: ''
+#     replacement: 'ə ɕ ɐ'
+#     segment: 'ə ʑ ɐ'
+
+  - following_context: ''  # tsəɕ -> tsɕ
+    preceding_context: ''
+    replacement: 'ts ɕ'
+    segment: 'ts ə ɕ'
+
+  - following_context: ''  # təɕ -> tɕ
+    preceding_context: ''
+    replacement: 't ɕ'
+    segment: 't ə ɕ'
+    
+  - following_context: ''  # ə l ə -> l ə
+    preceding_context: ''
+    replacement: 'l ə'
+    segment: 'ə l ə'
+    
+  - following_context: ''  # ə n ə -> n ə
+    preceding_context: ''
+    replacement: 'n ə'
+    segment: 'ə n ə'
+    
+  - following_context: 't'  # ʀ -> χ / KV _ t 
+    preceding_context: '[ːɑæeiou]'
+    replacement: 'χ'
+    segment: 'ʀ'
+
+  - following_context: $  # LV ʀ at word ending -> ɐ 
+    preceding_context: ''
+    replacement: 'ɐ'
+    segment: 'ʀ'
+
+  - following_context: ''  
+    preceding_context: '[ptkfsʃ]'
+    replacement: 'χ'
+    segment: 'ʀ'
+
+  - following_context: ''  
+    preceding_context: '[bdɡz]'
+    replacement: 'ʁ'
+    segment: 'ʀ'
+
+  - following_context: '[əɐ]'  
+    preceding_context: ''
+    replacement: 'ʁ'
+    segment: 'ʀ'
+
+  - following_context: ''  
+    preceding_context: '[əɐ]'
+    replacement: 'ʁ'
+    segment: 'ʀ'
+
+  - following_context: 'ʀ'   # schwaeinfügung nach LV vor ʀ
+    preceding_context: 'iː|eː|ɛː|oː|uː|yː'
+    replacement: 'ə'
+    segment: ''
+
+#   - following_context: 'ʀ'  # ɐ -> ə / ʀ
+#     preceding_context: ''
+#     replacement: 'ə'
+#     segment: 'ɐ'
+    
+  - following_context: '[nm]' # ɑ̃ː n/m -> æ n/m for loan integration
+    preceding_context: ''
+    replacement: 'æ'
+    segment: 'ɑ̃ː'
+    
+  - following_context: '[nm]'  # ɛ̃ː n/m -> æ n/m for loan integration
+    preceding_context: ''
+    replacement: 'i'
+    segment: 'ɛ̃ː'
+    
+
+
+  # siechzeg/sechzeg
+  # Vermëllung
+  # j ~ ʒ/ʑ

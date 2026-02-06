@@ -1,0 +1,882 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 302.87325 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Schnëssen" 
+        xmin = 0 
+        xmax = 302.87325 
+        intervals: size = 217 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.5435000061988831 
+            text = "" 
+        intervals [2]:
+            xmin = 0.5435000061988831 
+            xmax = 1.6764999628067017 
+            text = "sauer mous" 
+        intervals [3]:
+            xmin = 1.6764999628067017 
+            xmax = 3.123499870300293 
+            text = "" 
+        intervals [4]:
+            xmin = 3.123499870300293 
+            xmax = 4.536499977111816 
+            text = "en espresso" 
+        intervals [5]:
+            xmin = 4.536499977111816 
+            xmax = 5.753499984741211 
+            text = "" 
+        intervals [6]:
+            xmin = 5.753499984741211 
+            xmax = 8.156499862670898 
+            text = "géi an déi der mol méi déck strëmp un" 
+        intervals [7]:
+            xmin = 8.156499862670898 
+            xmax = 8.703499794006348 
+            text = "" 
+        intervals [8]:
+            xmin = 8.703499794006348 
+            xmax = 11.606499671936035 
+            text = "méinden dënschden mëttwoch" 
+        intervals [9]:
+            xmin = 11.606499671936035 
+            xmax = 11.783499717712402 
+            text = "" 
+        intervals [10]:
+            xmin = 11.783499717712402 
+            xmax = 12.806500434875488 
+            text = "donneschden" 
+        intervals [11]:
+            xmin = 12.806500434875488 
+            xmax = 12.833499908447266 
+            text = "" 
+        intervals [12]:
+            xmin = 12.833499908447266 
+            xmax = 13.786499977111816 
+            text = "freiden" 
+        intervals [13]:
+            xmin = 13.786499977111816 
+            xmax = 13.873499870300293 
+            text = "" 
+        intervals [14]:
+            xmin = 13.873499870300293 
+            xmax = 14.946499824523926 
+            text = "samschden" 
+        intervals [15]:
+            xmin = 14.946499824523926 
+            xmax = 15.083499908447266 
+            text = "" 
+        intervals [16]:
+            xmin = 15.083499908447266 
+            xmax = 15.916500091552734 
+            text = "sonnden en" 
+        intervals [17]:
+            xmin = 15.916500091552734 
+            xmax = 16.453500747680664 
+            text = "" 
+        intervals [18]:
+            xmin = 16.453500747680664 
+            xmax = 17.92650032043457 
+            text = "toiletterullo d'" 
+        intervals [19]:
+            xmin = 17.92650032043457 
+            xmax = 19.50349998474121 
+            text = "" 
+        intervals [20]:
+            xmin = 19.50349998474121 
+            xmax = 20.396499633789062 
+            text = "zwibbelen" 
+        intervals [21]:
+            xmin = 20.396499633789062 
+            xmax = 22.00349998474121 
+            text = "" 
+        intervals [22]:
+            xmin = 22.00349998474121 
+            xmax = 22.99650001525879 
+            text = "e fussball" 
+        intervals [23]:
+            xmin = 22.99650001525879 
+            xmax = 24.183500289916992 
+            text = "" 
+        intervals [24]:
+            xmin = 24.183500289916992 
+            xmax = 25.49650001525879 
+            text = "stréihällem" 
+        intervals [25]:
+            xmin = 25.49650001525879 
+            xmax = 26.723499298095703 
+            text = "" 
+        intervals [26]:
+            xmin = 26.723499298095703 
+            xmax = 27.796499252319336 
+            text = "wuerzelen" 
+        intervals [27]:
+            xmin = 27.796499252319336 
+            xmax = 28.993499755859375 
+            text = "" 
+        intervals [28]:
+            xmin = 28.993499755859375 
+            xmax = 29.83650016784668 
+            text = "eng wallis" 
+        intervals [29]:
+            xmin = 29.83650016784668 
+            xmax = 31.913501739501953 
+            text = "" 
+        intervals [30]:
+            xmin = 31.913501739501953 
+            xmax = 33.006500244140625 
+            text = "päiperlek" 
+        intervals [31]:
+            xmin = 33.006500244140625 
+            xmax = 34.51350021362305 
+            text = "" 
+        intervals [32]:
+            xmin = 34.51350021362305 
+            xmax = 35.60649871826172 
+            text = "zanpasta" 
+        intervals [33]:
+            xmin = 35.60649871826172 
+            xmax = 36.19350051879883 
+            text = "" 
+        intervals [34]:
+            xmin = 36.19350051879883 
+            xmax = 37.42649841308594 
+            text = "eng telecommande" 
+        intervals [35]:
+            xmin = 37.42649841308594 
+            xmax = 38.153499603271484 
+            text = "" 
+        intervals [36]:
+            xmin = 38.153499603271484 
+            xmax = 39.576499938964844 
+            text = "en täscherechner" 
+        intervals [37]:
+            xmin = 39.576499938964844 
+            xmax = 40.14350128173828 
+            text = "" 
+        intervals [38]:
+            xmin = 40.14350128173828 
+            xmax = 41.23649978637695 
+            text = "e fernsee" 
+        intervals [39]:
+            xmin = 41.23649978637695 
+            xmax = 41.68349838256836 
+            text = "" 
+        intervals [40]:
+            xmin = 41.68349838256836 
+            xmax = 42.54650115966797 
+            text = "boxen" 
+        intervals [41]:
+            xmin = 42.54650115966797 
+            xmax = 43.41350173950195 
+            text = "" 
+        intervals [42]:
+            xmin = 43.41350173950195 
+            xmax = 44.42649841308594 
+            text = "e puppelchen" 
+        intervals [43]:
+            xmin = 44.42649841308594 
+            xmax = 47.583499908447266 
+            text = "" 
+        intervals [44]:
+            xmin = 47.583499908447266 
+            xmax = 49.006500244140625 
+            text = "pech si jomessen" 
+        intervals [45]:
+            xmin = 49.006500244140625 
+            xmax = 50.063499450683594 
+            text = "" 
+        intervals [46]:
+            xmin = 50.063499450683594 
+            xmax = 51.076499938964844 
+            text = "kéisecker" 
+        intervals [47]:
+            xmin = 51.076499938964844 
+            xmax = 52.89350128173828 
+            text = "" 
+        intervals [48]:
+            xmin = 52.89350128173828 
+            xmax = 53.86650085449219 
+            text = "poubellen" 
+        intervals [49]:
+            xmin = 53.86650085449219 
+            xmax = 54.923500061035156 
+            text = "" 
+        intervals [50]:
+            xmin = 54.923500061035156 
+            xmax = 55.85649871826172 
+            text = "lëppestëft" 
+        intervals [51]:
+            xmin = 55.85649871826172 
+            xmax = 56.95349884033203 
+            text = "" 
+        intervals [52]:
+            xmin = 56.95349884033203 
+            xmax = 57.826499938964844 
+            text = "euro" 
+        intervals [53]:
+            xmin = 57.826499938964844 
+            xmax = 58.76350021362305 
+            text = "" 
+        intervals [54]:
+            xmin = 58.76350021362305 
+            xmax = 60.42649841308594 
+            text = "den autosfestival" 
+        intervals [55]:
+            xmin = 60.42649841308594 
+            xmax = 61.54349899291992 
+            text = "" 
+        intervals [56]:
+            xmin = 61.54349899291992 
+            xmax = 62.70650100708008 
+            text = "e chantier" 
+        intervals [57]:
+            xmin = 62.70650100708008 
+            xmax = 63.44350051879883 
+            text = "" 
+        intervals [58]:
+            xmin = 63.44350051879883 
+            xmax = 64.34649658203125 
+            text = "e caddie" 
+        intervals [59]:
+            xmin = 64.34649658203125 
+            xmax = 64.97350311279297 
+            text = "" 
+        intervals [60]:
+            xmin = 64.97350311279297 
+            xmax = 66.09649658203125 
+            text = "eise kuchen" 
+        intervals [61]:
+            xmin = 66.09649658203125 
+            xmax = 66.89350128173828 
+            text = "" 
+        intervals [62]:
+            xmin = 66.89350128173828 
+            xmax = 67.82649993896484 
+            text = "pharen" 
+        intervals [63]:
+            xmin = 67.82649993896484 
+            xmax = 68.60350036621094 
+            text = "" 
+        intervals [64]:
+            xmin = 68.60350036621094 
+            xmax = 69.6364974975586 
+            text = "en handy" 
+        intervals [65]:
+            xmin = 69.6364974975586 
+            xmax = 70.20350646972656 
+            text = "" 
+        intervals [66]:
+            xmin = 70.20350646972656 
+            xmax = 71.31649780273438 
+            text = "kartongen" 
+        intervals [67]:
+            xmin = 71.31649780273438 
+            xmax = 72.53350067138672 
+            text = "" 
+        intervals [68]:
+            xmin = 72.53350067138672 
+            xmax = 73.37649536132812 
+            text = "këssen" 
+        intervals [69]:
+            xmin = 73.37649536132812 
+            xmax = 74.04350280761719 
+            text = "" 
+        intervals [70]:
+            xmin = 74.04350280761719 
+            xmax = 75.17649841308594 
+            text = "e kürbis" 
+        intervals [71]:
+            xmin = 75.17649841308594 
+            xmax = 75.81350708007812 
+            text = "" 
+        intervals [72]:
+            xmin = 75.81350708007812 
+            xmax = 76.93649291992188 
+            text = "prabbelien" 
+        intervals [73]:
+            xmin = 76.93649291992188 
+            xmax = 77.68350219726562 
+            text = "" 
+        intervals [74]:
+            xmin = 77.68350219726562 
+            xmax = 78.72649383544922 
+            text = "e printer" 
+        intervals [75]:
+            xmin = 78.72649383544922 
+            xmax = 79.87350463867188 
+            text = "" 
+        intervals [76]:
+            xmin = 79.87350463867188 
+            xmax = 80.92649841308594 
+            text = "e strand" 
+        intervals [77]:
+            xmin = 80.92649841308594 
+            xmax = 82.47350311279297 
+            text = "" 
+        intervals [78]:
+            xmin = 82.47350311279297 
+            xmax = 84.39649963378906 
+            text = "e schaarschtech" 
+        intervals [79]:
+            xmin = 84.39649963378906 
+            xmax = 85.12350463867188 
+            text = "" 
+        intervals [80]:
+            xmin = 85.12350463867188 
+            xmax = 86.44649505615234 
+            text = "e kamäin" 
+        intervals [81]:
+            xmin = 86.44649505615234 
+            xmax = 86.62350463867188 
+            text = "" 
+        intervals [82]:
+            xmin = 86.62350463867188 
+            xmax = 87.8864974975586 
+            text = "e spannennetz" 
+        intervals [83]:
+            xmin = 87.8864974975586 
+            xmax = 88.27350616455078 
+            text = "" 
+        intervals [84]:
+            xmin = 88.27350616455078 
+            xmax = 89.42649841308594 
+            text = "eng fotell" 
+        intervals [85]:
+            xmin = 89.42649841308594 
+            xmax = 90.10350036621094 
+            text = "" 
+        intervals [86]:
+            xmin = 90.10350036621094 
+            xmax = 91.19649505615234 
+            text = "e kannapee" 
+        intervals [87]:
+            xmin = 91.19649505615234 
+            xmax = 91.88350677490234 
+            text = "" 
+        intervals [88]:
+            xmin = 91.88350677490234 
+            xmax = 92.8864974975586 
+            text = "poivronen" 
+        intervals [89]:
+            xmin = 92.8864974975586 
+            xmax = 93.51350402832031 
+            text = "" 
+        intervals [90]:
+            xmin = 93.51350402832031 
+            xmax = 94.5064926147461 
+            text = "eng eclair" 
+        intervals [91]:
+            xmin = 94.5064926147461 
+            xmax = 95.1135025024414 
+            text = "" 
+        intervals [92]:
+            xmin = 95.1135025024414 
+            xmax = 96.44649505615234 
+            text = "en nuesschnappech" 
+        intervals [93]:
+            xmin = 96.44649505615234 
+            xmax = 97.1935043334961 
+            text = "" 
+        intervals [94]:
+            xmin = 97.1935043334961 
+            xmax = 98.2564926147461 
+            text = "würfelen" 
+        intervals [95]:
+            xmin = 98.2564926147461 
+            xmax = 99.26350402832031 
+            text = "" 
+        intervals [96]:
+            xmin = 99.26350402832031 
+            xmax = 100.36649322509766 
+            text = "tournevisser" 
+        intervals [97]:
+            xmin = 100.36649322509766 
+            xmax = 102.12350463867188 
+            text = "" 
+        intervals [98]:
+            xmin = 102.12350463867188 
+            xmax = 103.5064926147461 
+            text = "d' salle d' attente en" 
+        intervals [99]:
+            xmin = 103.5064926147461 
+            xmax = 104.22350311279297 
+            text = "" 
+        intervals [100]:
+            xmin = 104.22350311279297 
+            xmax = 105.10649871826172 
+            text = "y" 
+        intervals [101]:
+            xmin = 105.10649871826172 
+            xmax = 105.92350006103516 
+            text = "" 
+        intervals [102]:
+            xmin = 105.92350006103516 
+            xmax = 107.3864974975586 
+            text = "de buschtaf h mëtschen" 
+        intervals [103]:
+            xmin = 107.3864974975586 
+            xmax = 108.31350708007812 
+            text = "" 
+        intervals [104]:
+            xmin = 108.31350708007812 
+            xmax = 109.23649597167969 
+            text = "" 
+        intervals [105]:
+            xmin = 109.23649597167969 
+            xmax = 109.68350219726562 
+            text = "" 
+        intervals [106]:
+            xmin = 109.68350219726562 
+            xmax = 110.49649810791016 
+            text = "besteck" 
+        intervals [107]:
+            xmin = 110.49649810791016 
+            xmax = 110.90350341796875 
+            text = "" 
+        intervals [108]:
+            xmin = 110.90350341796875 
+            xmax = 112.33649444580078 
+            text = "eng bréifboîte" 
+        intervals [109]:
+            xmin = 112.33649444580078 
+            xmax = 112.70350646972656 
+            text = "" 
+        intervals [110]:
+            xmin = 112.70350646972656 
+            xmax = 115.93649291992188 
+            text = "den ale mann ass an dat kaalt waasser gefall" 
+        intervals [111]:
+            xmin = 115.93649291992188 
+            xmax = 116.4435043334961 
+            text = "" 
+        intervals [112]:
+            xmin = 116.4435043334961 
+            xmax = 120.35649871826172 
+            text = "eng fra huet de freideg déi faarweg kleeder gebutt" 
+        intervals [113]:
+            xmin = 120.35649871826172 
+            xmax = 121.26350402832031 
+            text = "" 
+        intervals [114]:
+            xmin = 121.26350402832031 
+            xmax = 125.01649475097656 
+            text = "an der nuecht gouf ee vun den zwielef apostelen entfouert" 
+        intervals [115]:
+            xmin = 125.01649475097656 
+            xmax = 125.57350158691406 
+            text = "" 
+        intervals [116]:
+            xmin = 125.57350158691406 
+            xmax = 128.65650939941406 
+            text = "ech drénke muer nëmmen e glas wäin beim iessen" 
+        intervals [117]:
+            xmin = 128.65650939941406 
+            xmax = 129.2034912109375 
+            text = "" 
+        intervals [118]:
+            xmin = 129.2034912109375 
+            xmax = 131.18650817871094 
+            text = "mäi bouf huet ganz eleng" 
+        intervals [119]:
+            xmin = 131.18650817871094 
+            xmax = 131.22349548339844 
+            text = "" 
+        intervals [120]:
+            xmin = 131.22349548339844 
+            xmax = 133.9564971923828 
+            text = "pankecher mat mëllech an eeër gemaach" 
+        intervals [121]:
+            xmin = 133.9564971923828 
+            xmax = 134.43350219726562 
+            text = "" 
+        intervals [122]:
+            xmin = 134.43350219726562 
+            xmax = 137.18650817871094 
+            text = "hatt huet sech de weekend zwou dvdë kaf" 
+        intervals [123]:
+            xmin = 137.18650817871094 
+            xmax = 137.73348999023438 
+            text = "" 
+        intervals [124]:
+            xmin = 137.73348999023438 
+            xmax = 141.72650146484375 
+            text = "de bam am goat verléiert seng brong blieder am hierscht" 
+        intervals [125]:
+            xmin = 141.72650146484375 
+            xmax = 142.10350036621094 
+            text = "" 
+        intervals [126]:
+            xmin = 142.10350036621094 
+            xmax = 145.09649658203125 
+            text = "an der nuecht huet et ugefaangen ze schneien" 
+        intervals [127]:
+            xmin = 145.09649658203125 
+            xmax = 145.73348999023438 
+            text = "" 
+        intervals [128]:
+            xmin = 145.73348999023438 
+            xmax = 148.01651000976562 
+            text = "ech hunn der gëschter zwou e maile geschéckt" 
+        intervals [129]:
+            xmin = 148.01651000976562 
+            xmax = 148.4534912109375 
+            text = "" 
+        intervals [130]:
+            xmin = 148.4534912109375 
+            xmax = 152.00650024414062 
+            text = "ech schloen dech gläich mam kachläffel ëm d' oueren du af" 
+        intervals [131]:
+            xmin = 152.00650024414062 
+            xmax = 152.89349365234375 
+            text = "" 
+        intervals [132]:
+            xmin = 152.89349365234375 
+            xmax = 155.52650451660156 
+            text = "en huet sech virun dräi woche béid bee gebrach" 
+        intervals [133]:
+            xmin = 155.52650451660156 
+            xmax = 156.06349182128906 
+            text = "" 
+        intervals [134]:
+            xmin = 156.06349182128906 
+            xmax = 159.91650390625 
+            text = "ech weess net wat ech bei deem wieder haut undoen soll" 
+        intervals [135]:
+            xmin = 159.91650390625 
+            xmax = 160.5334930419922 
+            text = "" 
+        intervals [136]:
+            xmin = 160.5334930419922 
+            xmax = 163.09649658203125 
+            text = "si soen se géingen um néng auer kommen" 
+        intervals [137]:
+            xmin = 163.09649658203125 
+            xmax = 163.67349243164062 
+            text = "" 
+        intervals [138]:
+            xmin = 163.67349243164062 
+            xmax = 166.18650817871094 
+            text = "deng tuyauen hunn zu näischt gefouert" 
+        intervals [139]:
+            xmin = 166.18650817871094 
+            xmax = 166.64349365234375 
+            text = "" 
+        intervals [140]:
+            xmin = 166.64349365234375 
+            xmax = 170.35650634765625 
+            text = "wéinst dem reen musse mer zréck an eist hotelszëmmeren" 
+        intervals [141]:
+            xmin = 170.35650634765625 
+            xmax = 171.43350219726562 
+            text = "" 
+        intervals [142]:
+            xmin = 171.43350219726562 
+            xmax = 175.01651000976562 
+            text = "de claude schmit huet dat schéinsten haus am duerf" 
+        intervals [143]:
+            xmin = 175.01651000976562 
+            xmax = 175.9134979248047 
+            text = "" 
+        intervals [144]:
+            xmin = 175.9134979248047 
+            xmax = 180.0865020751953 
+            text = "jüllie huet en dënschdeg bei h m déi rout box uprobéiert" 
+        intervals [145]:
+            xmin = 180.0865020751953 
+            xmax = 180.9635009765625 
+            text = "" 
+        intervals [146]:
+            xmin = 180.9635009765625 
+            xmax = 185.02650451660156 
+            text = "lungen deng gesëschter haut de mëtten net op där fauler panz" 
+        intervals [147]:
+            xmin = 185.02650451660156 
+            xmax = 185.48348999023438 
+            text = "" 
+        intervals [148]:
+            xmin = 185.48348999023438 
+            xmax = 186.8365020751953 
+            text = "sief net su frech" 
+        intervals [149]:
+            xmin = 186.8365020751953 
+            xmax = 187.5034942626953 
+            text = "" 
+        intervals [150]:
+            xmin = 187.5034942626953 
+            xmax = 190.3365020751953 
+            text = "erënner et drun ier s de heem gees" 
+        intervals [151]:
+            xmin = 190.3365020751953 
+            xmax = 190.9635009765625 
+            text = "" 
+        intervals [152]:
+            xmin = 190.9635009765625 
+            xmax = 193.5364990234375 
+            text = "och déi klengste villercher hu flilleken" 
+        intervals [153]:
+            xmin = 193.5364990234375 
+            xmax = 194.2935028076172 
+            text = "" 
+        intervals [154]:
+            xmin = 194.2935028076172 
+            xmax = 197.4665069580078 
+            text = "mir si mat deem brongelzege fräsch bei d' véidoktesch gefuer" 
+        intervals [155]:
+            xmin = 197.4665069580078 
+            xmax = 198.17349243164062 
+            text = "" 
+        intervals [156]:
+            xmin = 198.17349243164062 
+            xmax = 201.98651123046875 
+            text = "d' kanner hunn an den iwwerfëlltene busser gesongen" 
+        intervals [157]:
+            xmin = 201.98651123046875 
+            xmax = 202.7534942626953 
+            text = "" 
+        intervals [158]:
+            xmin = 202.7534942626953 
+            xmax = 206.09649658203125 
+            text = "e samschden huet d' buergermeeschtesch eng ried gehalen" 
+        intervals [159]:
+            xmin = 206.09649658203125 
+            xmax = 206.65350341796875 
+            text = "" 
+        intervals [160]:
+            xmin = 206.65350341796875 
+            xmax = 208.50650024414062 
+            text = "hatt ësst gare raviolien" 
+        intervals [161]:
+            xmin = 208.50650024414062 
+            xmax = 209.26348876953125 
+            text = "" 
+        intervals [162]:
+            xmin = 209.26348876953125 
+            xmax = 211.34649658203125 
+            text = "d' gäertnerin kënnt" 
+        intervals [163]:
+            xmin = 211.34649658203125 
+            xmax = 211.55349731445312 
+            text = "" 
+        intervals [164]:
+            xmin = 211.55349731445312 
+            xmax = 213.4965057373047 
+            text = "d' wiss tëschent de feierdeeg méinen" 
+        intervals [165]:
+            xmin = 213.4965057373047 
+            xmax = 213.76348876953125 
+            text = "" 
+        intervals [166]:
+            xmin = 213.76348876953125 
+            xmax = 219.52650451660156 
+            text = "zënter nonzénghonnertsechzeg informéiert de camille weber sech iwwer psychologesch theemen" 
+        intervals [167]:
+            xmin = 219.52650451660156 
+            xmax = 219.94349670410156 
+            text = "" 
+        intervals [168]:
+            xmin = 219.94349670410156 
+            xmax = 223.92649841308594 
+            text = "d' fligeren vun der luxair sinn déi neitsten an europa" 
+        intervals [169]:
+            xmin = 223.92649841308594 
+            xmax = 224.49349975585938 
+            text = "" 
+        intervals [170]:
+            xmin = 224.49349975585938 
+            xmax = 228.01651000976562 
+            text = "deng schwëster ass genial hatt erzielt oft déi beschte witzer" 
+        intervals [171]:
+            xmin = 228.01651000976562 
+            xmax = 228.74349975585938 
+            text = "" 
+        intervals [172]:
+            xmin = 228.74349975585938 
+            xmax = 232.39649963378906 
+            text = "hien huet seng bicker an zéng verschiddenen tiräng leien" 
+        intervals [173]:
+            xmin = 232.39649963378906 
+            xmax = 233.23348999023438 
+            text = "" 
+        intervals [174]:
+            xmin = 233.23348999023438 
+            xmax = 235.22650146484375 
+            text = "du trëffs de ball dach och net" 
+        intervals [175]:
+            xmin = 235.22650146484375 
+            xmax = 235.94349670410156 
+            text = "" 
+        intervals [176]:
+            xmin = 235.94349670410156 
+            xmax = 239.89649963378906 
+            text = "war et net hien deen de pabeier nieft d' poubelle geheit huet" 
+        intervals [177]:
+            xmin = 239.89649963378906 
+            xmax = 240.31349182128906 
+            text = "" 
+        intervals [178]:
+            xmin = 240.31349182128906 
+            xmax = 243.39649963378906 
+            text = "deng beschte frëndin ass seng éischt course gelaf" 
+        intervals [179]:
+            xmin = 243.39649963378906 
+            xmax = 243.5435028076172 
+            text = "" 
+        intervals [180]:
+            xmin = 243.5435028076172 
+            xmax = 244.9965057373047 
+            text = "hatt war dat schnellst" 
+        intervals [181]:
+            xmin = 244.9965057373047 
+            xmax = 245.85350036621094 
+            text = "" 
+        intervals [182]:
+            xmin = 245.85350036621094 
+            xmax = 249.23651123046875 
+            text = "mäi brudder war um méindeg de moien nach midd" 
+        intervals [183]:
+            xmin = 249.23651123046875 
+            xmax = 249.6634979248047 
+            text = "" 
+        intervals [184]:
+            xmin = 249.6634979248047 
+            xmax = 252.63650512695312 
+            text = "äre cousin däerf awer lo net viru wuessen" 
+        intervals [185]:
+            xmin = 252.63650512695312 
+            xmax = 253.05349731445312 
+            text = "" 
+        intervals [186]:
+            xmin = 253.05349731445312 
+            xmax = 257.426513671875 
+            text = "d' kaz vum claudine weber wëll eech net bäissen och wann se béis kuckt" 
+        intervals [187]:
+            xmin = 257.426513671875 
+            xmax = 258.01348876953125 
+            text = "" 
+        intervals [188]:
+            xmin = 258.01348876953125 
+            xmax = 260.6864929199219 
+            text = "d' märel flitt héich an der loft" 
+        intervals [189]:
+            xmin = 260.6864929199219 
+            xmax = 260.9735107421875 
+            text = "" 
+        intervals [190]:
+            xmin = 260.9735107421875 
+            xmax = 263.8065185546875 
+            text = "ech hunn a mengem neie bakuewen e brout gebak" 
+        intervals [191]:
+            xmin = 263.8065185546875 
+            xmax = 264.4234924316406 
+            text = "" 
+        intervals [192]:
+            xmin = 264.4234924316406 
+            xmax = 268.41650390625 
+            text = "ech hunn eng béchs ierbsen fir aachtanachtzeg cent matbruecht" 
+        intervals [193]:
+            xmin = 268.41650390625 
+            xmax = 269.2135009765625 
+            text = "" 
+        intervals [194]:
+            xmin = 269.2135009765625 
+            xmax = 272.0865173339844 
+            text = "d' hallschent vun de schëlder bréichte mer net" 
+        intervals [195]:
+            xmin = 272.0865173339844 
+            xmax = 272.52349853515625 
+            text = "" 
+        intervals [196]:
+            xmin = 272.52349853515625 
+            xmax = 275.0165100097656 
+            text = "ech hat geduet du has eppes verstanen" 
+        intervals [197]:
+            xmin = 275.0165100097656 
+            xmax = 275.77349853515625 
+            text = "" 
+        intervals [198]:
+            xmin = 275.77349853515625 
+            xmax = 278.176513671875 
+            text = "dat do géing jiddereen zweifele loossen" 
+        intervals [199]:
+            xmin = 278.176513671875 
+            xmax = 278.8634948730469 
+            text = "" 
+        intervals [200]:
+            xmin = 278.8634948730469 
+            xmax = 282.34649658203125 
+            text = "firwat ginn et leit déi psychologie studéieren" 
+        intervals [201]:
+            xmin = 282.34649658203125 
+            xmax = 282.9134826660156 
+            text = "" 
+        intervals [202]:
+            xmin = 282.9134826660156 
+            xmax = 286.1264953613281 
+            text = "darf ech däi been mat där kuscheleger decken zoudecken" 
+        intervals [203]:
+            xmin = 286.1264953613281 
+            xmax = 286.7034912109375 
+            text = "" 
+        intervals [204]:
+            xmin = 286.7034912109375 
+            xmax = 287.4565124511719 
+            text = "en a" 
+        intervals [205]:
+            xmin = 287.4565124511719 
+            xmax = 288.323486328125 
+            text = "" 
+        intervals [206]:
+            xmin = 288.323486328125 
+            xmax = 289.406494140625 
+            text = "griicheland" 
+        intervals [207]:
+            xmin = 289.406494140625 
+            xmax = 290.1835021972656 
+            text = "" 
+        intervals [208]:
+            xmin = 290.1835021972656 
+            xmax = 291.1264953613281 
+            text = "de prisong" 
+        intervals [209]:
+            xmin = 291.1264953613281 
+            xmax = 291.7934875488281 
+            text = "" 
+        intervals [210]:
+            xmin = 291.7934875488281 
+            xmax = 292.7565002441406 
+            text = "d' kamellen" 
+        intervals [211]:
+            xmin = 292.7565002441406 
+            xmax = 293.9434814453125 
+            text = "" 
+        intervals [212]:
+            xmin = 293.9434814453125 
+            xmax = 297.8365173339844 
+            text = "meng mamm péckt hir wallissen mee si fënnt hire faarwege schal" 
+        intervals [213]:
+            xmin = 297.8365173339844 
+            xmax = 298.6235046386719 
+            text = "" 
+        intervals [214]:
+            xmin = 298.6235046386719 
+            xmax = 300.3965148925781 
+            text = "net de buschtaf j" 
+        intervals [215]:
+            xmin = 300.3965148925781 
+            xmax = 300.6835021972656 
+            text = "" 
+        intervals [216]:
+            xmin = 300.6835021972656 
+            xmax = 302.7065124511719 
+            text = "haalt elo endlech op domadder" 
+        intervals [217]:
+            xmin = 302.7065124511719 
+            xmax = 302.87325 
+            text = "" 

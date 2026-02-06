@@ -1,0 +1,14 @@
+# Conda environment for Montreal Forced Aligner (Luxembourgish)
+# Usage: conda env create -f environment.yml && conda activate aligner
+name: aligner
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - montreal-forced-aligner
+  - pip
+  # Optional: for scripts that merge TextGrids or process OOV lists
+  # - praatio
+  # - pip:
+  #   - praatio
